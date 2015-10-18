@@ -1,0 +1,8 @@
+<div class="homepage container">   
+	<div class="instrum-slider">
+		<arrows array-length="{{instruments.length}}" 
+		        current-item-index="currentInstrumentIndex" />
+		<img ng-src="{{instruments[currentInstrumentIndex].url}}" class="img-responsive" />
+		<p class="instrum-descrip" ng-bind="instruments[currentInstrumentIndex].description"></p>
+	</div>
+</div>

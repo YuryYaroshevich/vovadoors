@@ -13,29 +13,38 @@ angular
     'ngResource',
     'ngRoute',
     'controllers',
-    'services'
+    'services',
+    'directives',
+    'ui.bootstrap.modal'
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: '/views/main.html',
         controller: 'MainCtrl'
       })
       .when('/examples', {
-        templateUrl: 'views/examples.html',
-        controller: 'ExampleCtrl'/*,
+        templateUrl: '/views/examples.html',
+        controller: 'ExampleCtrl',
         resolve: {
-              examples: function(Examples) {
-                  return Examples();
-              }
-        }*/
+          examples: function(Examples) {
+            return Examples();
+          }
+        }
       })
       .when('/instruments', {
-        templateUrl: 'views/instruments.html',
-        controller: 'InstrumentCtrl'
+        templateUrl: '/views/instruments.html',
+        controller: 'InstrumentCtrl',
+        resolve: {
+          instruments: function(Instrument) {
+            return Instrument.query();
+          }
+        }
       })
-      .when('/recalls', {
-        templateUrl: 'views/recalls.html',
-        controller: 'RecallCtrl'
+      .when('/about', {
+        templateUrl: '/views/certificate.html'
+      })
+      .otherwise({
+        redirectTo: '/'
       })
   });

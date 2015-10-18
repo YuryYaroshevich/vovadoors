@@ -190,6 +190,7 @@ footer {
 
 #image-modal {
 	margin: 0 auto;
+	display: block;
 }
 
 #image-modal .modal-content {
@@ -216,6 +217,16 @@ footer {
 	opacity: 1;
 	color: white;
 }
+
+.modal-header .close {
+    margin-top: -31px;
+}
+
+#image-modal .close:active {
+	outline: 0;
+}
+
+
 
 #image-modal img {
 	margin: 0 auto;
@@ -260,6 +271,11 @@ footer {
 }
 
 .arrow-container {
+	width: 53px;
+    margin: 0px auto 0px auto;
+}
+
+.instrum-slider .arrow-container {
 	margin-bottom: 10px;
 }
 
@@ -432,7 +448,7 @@ footer {
 	}
 
 	.homepage .instrum-descrip {
-    	font-size: 14px;
+    	font-size: 15px;
     }
 }
 
