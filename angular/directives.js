@@ -18,7 +18,7 @@ directives.directive('arrows', [function() {
 			currentItemIndex: '=',
 			arrayLength: '@'
 		},
-		link: function(scope) {
+		link: function (scope) {
 			scope.left = function() {
 				if (scope.currentItemIndex > 0) {
 					scope.currentItemIndex--;

@@ -24,7 +24,8 @@
     <script src="js/ekko-lightbox.js"></script>
 
     <script src="/angular/angular.min.js"></script>
-    <script src="/angular/angular-route.min.js"></script>
+    <script src="/angular/angular-ui-router.min.js"></script>
+    <!--<script src="/angular/angular-route.min.js"></script>-->
     <script src="/angular/angular-resource.min.js"></script>
     <!--<script data-require="angular-ui-bootstrap@0.12.0" data-semver="0.12.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.min.js"></script>-->
     <script src="/angular/ui-bootstrap-custom-tpls-0.13.4.min.js"></script>
@@ -33,17 +34,6 @@
     <script src="/angular/app.js"></script>
     <script src="/angular/controllers.js"></script>
     <script src="/angular/services.js"></script>
-    <script>
-      $(document).ready(function(){
-        $('#navbar a[href="#/"]').tab('show');
-      });
-
-      $('#navbar a').click(function (e) {
-        $(this).tab('show');
-        return true;
-      })
-    </script>
-
   </head>
 
  <body ng-app="vovadoorsApp">
@@ -62,16 +52,16 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#/">Главная</a></li>
-            <li><a href="#/examples">Примеры Работы</a></li>
-            <li><a href="#/instruments">Инструменты</a></li>
-            <li><a href="#/about">О Компании</a></li>
+            <li><a ui-sref-active="selected-tab" ui-sref="main" href="#/">Главная</a></li>
+            <li><a ui-sref-active="selected-tab" ui-sref="examples" href="#/examples">Примеры Работы</a></li>
+            <li><a ui-sref-active="selected-tab" ui-sref="instruments" href="#/instruments">Инструменты</a></li>
+            <li><a ui-sref-active="selected-tab" ui-sref="about" href="#/about">О Компании</a></li>
           </ul>
         </div>
       </div>
     </nav>
         
-        <div ng-view=""></div>
+        <div ui-view></div>
 
         <footer>
           Vovadoors.by

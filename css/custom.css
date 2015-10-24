@@ -18,6 +18,10 @@ body {
 	background-color: #fff;
 	color: #e74c3c;
 }
+.selected-tab {
+	background-color: #fff;
+	color: #e74c3c;
+}
 
 .navbar-inverse .navbar-brand {
 	color: white;
@@ -326,7 +330,7 @@ footer {
 @media (min-width: 769px) and (max-width: 991px) {
 	.navbar-inverse .navbar-nav>li>a {
 	   font-size: 15px;
-	   color: white;
+	   /*color: white;*/
     }
 
     .jumbotron h1 {

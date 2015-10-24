@@ -11,19 +11,23 @@
 angular
   .module('vovadoorsApp', [
     'ngResource',
-    'ngRoute',
     'controllers',
     'services',
     'directives',
-    'ui.bootstrap.modal'
+    'ui.bootstrap.modal',
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise("/");
+
+    $stateProvider
+      .state('main', {
+        url: '/',
         templateUrl: '/views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/examples', {
+      .state('examples', {
+        url: '/examples',
         templateUrl: '/views/examples.html',
         controller: 'ExampleCtrl',
         resolve: {
@@ -32,7 +36,8 @@ angular
           }
         }
       })
-      .when('/instruments', {
+      .state('instruments', {
+        url: '/instruments',
         templateUrl: '/views/instruments.html',
         controller: 'InstrumentCtrl',
         resolve: {
@@ -41,10 +46,8 @@ angular
           }
         }
       })
-      .when('/about', {
-        templateUrl: '/views/certificate.html'
-      })
-      .otherwise({
-        redirectTo: '/'
+      .state('about', {
+        url: '/about',
+        templateUrl: '/views/certificate.html'        
       })
   });

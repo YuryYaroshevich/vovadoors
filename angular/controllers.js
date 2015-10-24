@@ -4,8 +4,8 @@ var controllers = angular.module('controllers', []);
 
 controllers.controller('MainCtrl', function($scope) {});
 
-controllers.controller('ExampleCtrl', ['$scope', '$modal', 'examples',
-  function($scope, $modal, examples) {
+controllers.controller('ExampleCtrl', ['$scope', '$modal', 'examples','$state',
+  function($scope, $modal, examples,$state) {
 
     $scope.examples = examples;
     $scope.exampleRows = [];
