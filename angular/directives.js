@@ -36,3 +36,19 @@ directives.directive('arrows', [function() {
 		}
 	};
 }]);
+
+directives.directive('collapsableNavbar', [function () {
+	return {
+		restrict: 'A',
+		link: function (scope, elem, attrs) {
+			console.log('sdfds');
+			var anchors = $(elem).find('a');
+			$.each(anchors, function (i, a) {
+				$(a).click(function () {
+					$(elem).toggle('slow');
+				});
+			});
+			console.log(anchors);
+		}
+	};
+}]);

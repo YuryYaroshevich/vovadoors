@@ -11,8 +11,8 @@
         <div class="homepage container door-imgs">
          <div class="row" ng-repeat="row in exampleRows">
            <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="example in row">
-            <a href="javascript:void(0);" ng-click="openModal($parent.$index * 4 + $index)">
-              <img ng-src="{{example.url}}" data-toggle="tooltip" data-placement="top" title="Нажмите, чтобы увеличить" >
+            <a href="javascript:void(0);">
+              <img ng-src="{{example.url}}" ng-click="openModal($parent.$index * 4 + $index)" data-toggle="tooltip" data-placement="top" title="Нажмите, чтобы увеличить" >
             </a>
           </div>
          </div>

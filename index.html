@@ -8,7 +8,6 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
     <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Playfair+Display:700italic,400,700' rel='stylesheet' type='text/css'>
@@ -25,10 +24,9 @@
 
     <script src="/angular/angular.min.js"></script>
     <script src="/angular/angular-ui-router.min.js"></script>
-    <!--<script src="/angular/angular-route.min.js"></script>-->
     <script src="/angular/angular-resource.min.js"></script>
-    <!--<script data-require="angular-ui-bootstrap@0.12.0" data-semver="0.12.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.min.js"></script>-->
-    <script src="/angular/ui-bootstrap-custom-tpls-0.13.4.min.js"></script>
+    <script src="/angular/ui-bootstrap-custom-tpls-0.14.3.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
     
     <script src="/angular/directives.js"></script>
     <script src="/angular/app.js"></script>
@@ -40,9 +38,9 @@
 <div class="wrapper">
 
   <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
+      <div class="container" ng-init="$root.isCollapsed = true">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <button type="button" class="navbar-toggle collapsed" ng-click="$root.isCollapsed = !$root.isCollapsed">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -50,12 +48,12 @@
           </button>
           <a class="navbar-brand" href="#">Vovadoors</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="collapse navbar-collapse" uib-collapse="$root.isCollapsed">
           <ul class="nav navbar-nav navbar-right">
-            <li><a ui-sref-active="selected-tab" ui-sref="main" href="#/">Главная</a></li>
-            <li><a ui-sref-active="selected-tab" ui-sref="examples" href="#/examples">Примеры Работы</a></li>
-            <li><a ui-sref-active="selected-tab" ui-sref="instruments" href="#/instruments">Инструменты</a></li>
-            <li><a ui-sref-active="selected-tab" ui-sref="about" href="#/about">О Компании</a></li>
+            <li><a class="tab" ng-click="$root.isCollapsed = true" ui-sref-active="selected-tab" ui-sref="main">Главная</a></li>
+            <li><a class="tab" ng-click="$root.isCollapsed = true" ui-sref-active="selected-tab" ui-sref="examples">Примеры Работы</a></li>
+            <li><a class="tab" ng-click="$root.isCollapsed = true" ui-sref-active="selected-tab" ui-sref="instruments">Инструменты</a></li>
+            <li><a class="tab" ng-click="$root.isCollapsed = true" ui-sref-active="selected-tab" ui-sref="about">О Компании</a></li>
           </ul>
         </div>
       </div>

@@ -4,8 +4,8 @@ var controllers = angular.module('controllers', []);
 
 controllers.controller('MainCtrl', function($scope) {});
 
-controllers.controller('ExampleCtrl', ['$scope', '$modal', 'examples','$state',
-  function($scope, $modal, examples,$state) {
+controllers.controller('ExampleCtrl', ['$scope', '$uibModal', 'examples','$state',
+  function($scope, $uibModal, examples, $state) {
 
     $scope.examples = examples;
     $scope.exampleRows = [];
@@ -21,7 +21,7 @@ controllers.controller('ExampleCtrl', ['$scope', '$modal', 'examples','$state',
     }
 
     $scope.openModal = function(selectedIndex) {
-      var modalInstance = $modal.open({
+      var modalInstance = $uibModal.open({
         animation: true,
         templateUrl: '../template/modal/content.html',
         windowTemplateUrl: '../template/modal/window.html',
@@ -34,19 +34,19 @@ controllers.controller('ExampleCtrl', ['$scope', '$modal', 'examples','$state',
             return selectedIndex;
           }
         },
-        backdrop: 'static',
+        backdrop: 'static'
       });
     };
   }
 ]);
 
-controllers.controller('ExampleModalCtrl', ['$scope', '$modalInstance', 'examples', 'selectedIndex',
-  function($scope, $modalInstance, examples, selectedIndex) {
+controllers.controller('ExampleModalCtrl', ['$scope', '$uibModalInstance', 'examples', 'selectedIndex',
+  function($scope, $uibModalInstance, examples, selectedIndex) {
     $scope.examples = examples;
     $scope.selectedIndex = selectedIndex;
 
     $scope.close = function() {
-      $modalInstance.close();
+      $uibModalInstance.close();
     };
   }
 ]);

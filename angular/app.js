@@ -15,18 +15,27 @@ angular
     'services',
     'directives',
     'ui.bootstrap.modal',
+    'ui.bootstrap.collapse',
+    'ngAnimate',
     'ui.router'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/");
 
     $stateProvider
-      .state('main', {
+      /*.state('root', {
+        abstract: true,
+        params: {isCollapsed: true},
+        template: '<ui-view/>'
+      })
+      */.state('main', {
+        //parent: 'root',
         url: '/',
         templateUrl: '/views/main.html',
         controller: 'MainCtrl'
       })
       .state('examples', {
+        //parent: 'root',
         url: '/examples',
         templateUrl: '/views/examples.html',
         controller: 'ExampleCtrl',
@@ -37,6 +46,7 @@ angular
         }
       })
       .state('instruments', {
+        //parent: 'root',
         url: '/instruments',
         templateUrl: '/views/instruments.html',
         controller: 'InstrumentCtrl',
@@ -47,6 +57,7 @@ angular
         }
       })
       .state('about', {
+        //parent: 'root',
         url: '/about',
         templateUrl: '/views/certificate.html'        
       })

@@ -12,13 +12,14 @@ body {
 	font-size: 16px;
 	color: white;
 	font-family: 'Courier New', Courier;
+	outline: 0;
 }
 
 .navbar-inverse .navbar-nav>li>a:hover {
 	background-color: #fff;
 	color: #e74c3c;
 }
-.selected-tab {
+.navbar-inverse .navbar-nav>li>a.selected-tab {
 	background-color: #fff;
 	color: #e74c3c;
 }
@@ -191,6 +192,16 @@ footer {
 }
 
 /* examples modal*/
+
+.modal.fade {
+  opacity: 1;
+}
+
+.modal.fade .modal-dialog, .modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
 
 #image-modal {
 	margin: 0 auto;
