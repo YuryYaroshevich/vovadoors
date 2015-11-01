@@ -1,8 +1,11 @@
 <div class="homepage container">   
-	<div class="instrum-slider">
+	<div class="instrum-slider" image-on-load>
 		<arrows array-length="{{instruments.length}}" 
-		        current-item-index="currentInstrumentIndex" />
-		<img ng-src="{{instruments[currentInstrumentIndex].url}}" class="img-responsive" />
-		<p class="instrum-descrip" ng-bind="instruments[currentInstrumentIndex].description"></p>
+		current-item-index="currentInstrumentIndex" />
+		<i class="fa fa-spinner fa-pulse fa-3x fa-fw spinner"></i>
+		<div class="instrument-slide hide">
+			<img id="bat" ng-src="{{instruments[currentInstrumentIndex].url}}" class="img-responsive" />
+			<p class="instrum-descrip" ng-bind="instruments[currentInstrumentIndex].description"></p>
+		</div>
 	</div>
 </div>

@@ -20,6 +20,7 @@ directives.directive('arrows', [function() {
 		},
 		link: function (scope) {
 			scope.left = function() {
+				scope.$emit('left.arrow.clicked');
 				if (scope.currentItemIndex > 0) {
 					scope.currentItemIndex--;
 				} else {
@@ -27,6 +28,7 @@ directives.directive('arrows', [function() {
 				}
 			};
 			scope.right = function() {
+				scope.$emit('right.arrow.clicked');
 				if (scope.currentItemIndex < scope.arrayLength - 1) {
 					scope.currentItemIndex++;
 				} else {
@@ -41,14 +43,42 @@ directives.directive('collapsableNavbar', [function () {
 	return {
 		restrict: 'A',
 		link: function (scope, elem, attrs) {
-			console.log('sdfds');
 			var anchors = $(elem).find('a');
 			$.each(anchors, function (i, a) {
 				$(a).click(function () {
 					$(elem).toggle('slow');
 				});
 			});
-			console.log(anchors);
+		}
+	};
+}]);
+
+directives.directive('imageOnLoad', [function () {
+	return {
+		restrict: 'A',
+		link: function (scope, elem, attrs) {
+			var img = $(elem).find('img');
+			var hidedElems = $('.hide');
+			$(img).load(function () {
+				$.each(hidedElems, function (i, hided) {			
+					$(hided).removeClass('hide');
+				});
+				$('.spinner').addClass('hide');
+			});
+			
+			var startPreloading = function () {
+				$.each(hidedElems, function (i, hided) {			
+					$(hided).addClass('hide');
+				});
+				$('.spinner').removeClass('hide');				
+			};
+			scope.$on('left.arrow.clicked', function () {
+				startPreloading();
+			});
+
+			scope.$on('right.arrow.clicked', function () {
+				startPreloading();
+			});
 		}
 	};
 }]);

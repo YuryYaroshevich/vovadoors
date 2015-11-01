@@ -1,20 +1,11 @@
- <script>
-        $(document).ready(function(){
-          $('[data-toggle="tooltip"]').tooltip();   
-
-          $('[data-toggle="tooltip"]').on('click', function() {
-            $(this).tooltip('hide');
-          });
-        });
-      </script>
-
-        <div class="homepage container door-imgs">
-         <div class="row" ng-repeat="row in exampleRows">
-           <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="example in row">
-            <a href="javascript:void(0);">
-              <img ng-src="{{example.url}}" ng-click="openModal($parent.$index * 4 + $index)" data-toggle="tooltip" data-placement="top" title="Нажмите, чтобы увеличить" >
-            </a>
-          </div>
-         </div>
-        </div>
+<div class="homepage container door-imgs">
+ <div class="row" ng-repeat="row in exampleRows">
+   <div class="col-xs-12 col-sm-6 col-md-3" ng-repeat="example in row">
+    <a href="javascript:void(0);" image-on-load>
+      <i class="fa fa-spinner fa-pulse fa-3x fa-fw spinner"></i>
+      <img ng-src="{{example.url}}" class="hide" ng-click="openModal($parent.$index * 4 + $index)" uib-tooltip="Нажмите, чтобы увеличить" />
+    </a>
+  </div>
+</div>
+</div>
  
