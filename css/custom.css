@@ -153,6 +153,13 @@ footer {
 	opacity: .8;
 }
 
+.vk-icon {
+	margin-left: 10px;
+}
+.vk-btn {
+	margin-top: 30px;
+}
+
 .homepage hr {
 	border-top: 1px solid #e74c3c;
     width: 160px;
@@ -396,6 +403,10 @@ footer {
 		font-size: 18px;
 	}
 
+    .vk-btn {
+		margin-top: 20px;
+	}
+
 	.homepage p {
 		font-size: 18px;
 	}
@@ -437,7 +448,11 @@ footer {
 	}
 
 	.btn-lg {
-		font-size: 10px;
+		font-size: 14px;
+	}
+
+    .vk-btn {
+		margin-top: 20px;
 	}
 
 	.homepage p {

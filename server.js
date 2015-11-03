@@ -2,7 +2,7 @@ var express = require('express')
 
 var app = express()
 
-app.use(express.static('css'))
+app.use(express.static('./'))
 
 // to serve directory index
 // var serveIndex = require('serve-index')

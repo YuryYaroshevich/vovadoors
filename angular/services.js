@@ -4,7 +4,7 @@ var services = angular.module('services', ['ngResource']);
 
 services.factory('Example', ['$resource',
 	function ($resource) {
-		return $resource('/examples/examples.json');
+		return $resource('/images/examples/examples.json');
 	}
 ]);
 
@@ -23,6 +23,6 @@ services.factory('Examples', ['$q', 'Example',
 
 services.factory('Instrument', ['$resource',
 	function ($resource) {
-		return $resource('/instruments/instr.json');
+		return $resource('/images/instruments/instr.json');
 	}
 ]);

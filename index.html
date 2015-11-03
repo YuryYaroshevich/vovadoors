@@ -22,10 +22,28 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ekko-lightbox.js"></script>
     <script type="text/javascript">
-      $(window).load(function(){
-        var img = new Image();
-        img.src = '/images/doors-bright.jpg';
-      });
+      function preloader() {
+        if (document.images) {
+          for (var i = 1; i <= 24; i++) {
+            var img = new Image();
+            img.src = 'images/examples/d' + i + '.JPG';
+          }
+        }
+      }
+      function addLoadEvent(func) {
+        var oldonload = window.onload;
+        if (typeof window.onload != 'function') {
+          window.onload = func;
+        } else {
+          window.onload = function() {
+            if (oldonload) {
+              oldonload();
+            }
+            func();
+          }
+        }
+      }
+      addLoadEvent(preloader);
     </script>
 
     <script src="/angular/angular.min.js"></script>
@@ -38,6 +56,8 @@
     <script src="/angular/app.js"></script>
     <script src="/angular/controllers.js"></script>
     <script src="/angular/services.js"></script>
+    <script type="text/javascript" src="http://vk.com/js/api/share.js?93" charset="windows-1251"></script>
+
   </head>
 
  <body ng-app="vovadoorsApp">
@@ -60,11 +80,14 @@
             <li><a class="tab" ng-click="$root.isCollapsed = true" ui-sref-active="selected-tab" ui-sref="examples">Примеры Работы</a></li>
             <li><a class="tab" ng-click="$root.isCollapsed = true" ui-sref-active="selected-tab" ui-sref="instruments">Инструменты</a></li>
             <li><a class="tab" ng-click="$root.isCollapsed = true" ui-sref-active="selected-tab" ui-sref="about">О Компании</a></li>
+            <li></li>
           </ul>
         </div>
       </div>
     </nav>
-        
+
+
+
         <div ui-view></div>
 
         <footer>

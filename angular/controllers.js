@@ -6,7 +6,6 @@ controllers.controller('MainCtrl', function($scope) {});
 
 controllers.controller('ExampleCtrl', ['$scope', '$uibModal', 'examples','$state',
   function($scope, $uibModal, examples, $state) {
-
     $scope.examples = examples;
     $scope.exampleRows = [];
     var row = [];

@@ -1,34 +1,34 @@
 [
 		{
-			"url":"/instruments/lh1040.jpg",
+			"url":"/images/instruments/lh1040.jpg",
 			"description": "Инструмент Table top miter lh1040 используется для распила заготовок."
 		},
 		{
-			"url":"/instruments/rp2300fc.jpg",
+			"url":"/images/instruments/rp2300fc.jpg",
 			"description": "Фрейзер Router rp2300fc используется для врезки замков."
 		},
 		{
-			"url":"/instruments/bosh-gkf600.jpg",
+			"url":"/images/instruments/bosh-gkf600.jpg",
 			"description": "Фрейзер Bosch gkf600 используется для врезки петель."
 		},
 		{
-			"url":"/instruments/bosch_2_26.jpg",
+			"url":"/images/instruments/bosch_2_26.jpg",
 			"description": "Для различных видов сверления используется перфоратор Bosch 2-26."
 		},
 		{
-			"url":"/instruments/AEG_BSB_18G2.jpg",
+			"url":"/images/instruments/AEG_BSB_18G2.jpg",
 			"description": "Для закручивания шурупов, саморезов, винтов и дюбелей используется шуроповёрт AEG BSB 18g2."
 		},
 		{
-			"url":"/instruments/bosch_gll_2-50.jpg",
+			"url":"/images/instruments/bosch_gll_2-50.jpg",
 			"description": "С помощи лазерного уровня Bosch gll 2-50 устанавливается коробка. Она крепится специальными крепёжными нагелями, а после этого запенивается."
 		},
 		{
-			"url":"/instruments/pylesos.jpg",
+			"url":"/images/instruments/pylesos.jpg",
 			"description": "Пылесос подключается к электроинструменту, работает с ним синхронно, в результате поглощается пыль и снижается загразняемость помещения"
 		},
 		{
-			"url":"/instruments/mp-super.jpg",
+			"url":"/images/instruments/mp-super.jpg",
 			"description": "Обычно наличник закрепляется с помощью финишных гвоздей. Это портит внешний вид. Мы используем пневмопистолет и закрепляем микрошпилькой. В итоге места закрепления невидимы даже на белых наличниках."
 		}
 ]
